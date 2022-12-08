@@ -1,3 +1,9 @@
 <h1>Welcome to Ang. Your project is {{title}}</h1>
 
-<app-todo-input></app-todo-input>
+<app-todo-input (todoTitleSubmit)="addTodo($event)"></app-todo-input>
+
+<ul >
+  <li *ngFor="let todo of todoItems">
+    <app-todo-item [todo]="todo"></app-todo-item>
+  </li>
+</ul>

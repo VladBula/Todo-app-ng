@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-todo-input',
@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class TodoInputComponent {
 todoTitle: string = "";
+@Output() todoTitleSubmit = new EventEmitter<string>();
 
-submitTodo(title: string){
-  this.todoTitle = title
+submitTodo(){
+  this.todoTitleSubmit.emit(this.todoTitle)
+  this.todoTitle = ""
 }
 }
