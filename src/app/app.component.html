@@ -3,7 +3,9 @@
 <app-todo-input (todoTitleSubmit)="addTodo($event)"></app-todo-input>
 
 <ul >
-  <li *ngFor="let todo of todoItems">
-    <app-todo-item [todo]="todo"></app-todo-item>
+  <li *ngFor="let todo of todoItems; index as i">
+    <app-todo-item [todo]="todo" (removeTodo)="removeTodo(i)"></app-todo-item>
   </li>
 </ul>
+
+<app-todos></app-todos>

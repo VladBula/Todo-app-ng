@@ -19,6 +19,10 @@ ngOnInit() {
 }
 
   addTodo(title: string) {
-    this.todoItems.push({title});
+    this.todoStorage.addTodo(title)
+  }
+
+  removeTodo(index: number){
+  this.todoStorage.removeTodo(index)
   }
 }
